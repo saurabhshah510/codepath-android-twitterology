@@ -1,13 +1,13 @@
 package com.codepath.apps.mytwitterology;
 
-import org.scribe.builder.api.Api;
-import org.scribe.builder.api.FlickrApi;
-
 import android.content.Context;
 
 import com.codepath.oauth.OAuthBaseClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
+
+import org.scribe.builder.api.Api;
+import org.scribe.builder.api.TwitterApi;
 
 /*
  * 
@@ -21,14 +21,14 @@ import com.loopj.android.http.RequestParams;
  * NOTE: You may want to rename this object based on the service i.e TwitterClient or FlickrClient
  * 
  */
-public class RestClient extends OAuthBaseClient {
-	public static final Class<? extends Api> REST_API_CLASS = FlickrApi.class; // Change this
-	public static final String REST_URL = "http://api.flickr.com/services"; // Change this, base API URL
-	public static final String REST_CONSUMER_KEY = "SOME_KEY";       // Change this
-	public static final String REST_CONSUMER_SECRET = "SOME_SECRET"; // Change this
-	public static final String REST_CALLBACK_URL = "oauth://cprest"; // Change this (here and in manifest)
+public class TwitterClient extends OAuthBaseClient {
+	public static final Class<? extends Api> REST_API_CLASS = TwitterApi.class;
+	public static final String REST_URL = "https://api.twitter.com/1.1";
+	public static final String REST_CONSUMER_KEY = "Wn0Wvf63QPstiwI0vvcnWc9Rn";
+	public static final String REST_CONSUMER_SECRET = "XCYEKNF00crnJK4OcktjhZYh7TTbjP59jElRCF8ikMO5O8RSlT";
+	public static final String REST_CALLBACK_URL = "oauth://cpmytwitterology"; // Change this (here and in manifest)
 
-	public RestClient(Context context) {
+	public TwitterClient(Context context) {
 		super(context, REST_API_CLASS, REST_URL, REST_CONSUMER_KEY, REST_CONSUMER_SECRET, REST_CALLBACK_URL);
 	}
 
